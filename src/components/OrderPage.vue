@@ -13,18 +13,8 @@
 
     <tbody >
       <tr v-for="order in orders" :key="order.orderNumber">
-        <td v-for="key in columns" :key="key" v-if="key == 'Price'" >
+        <td v-for="key in columns" :key="key" >
           {{order[camelCase(key)]}}
-          <!-- <span :class='{dropdownBtn: index == 0}'  @click='dropdown'>{{tabItem}}</span>
-          <ul v-if='index == 0' class="dropdownWrapper" v-show='dropdownActive'>
-            <li v-for='(item, index) in paymentMethod' v-bind:key="index">{{item}}</li>
-          </ul> -->
-          <!-- <select>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select> -->
         </td>
       </tr>
     </tbody>
@@ -47,7 +37,7 @@ export default {
   data () {
     return {
       pageTitle: '22FL Biryani Group Order',
-      columns: ['Order Number', 'type','Name','Plan B','Price','Paid via','Paid','Your Balance','change'],
+      columns: ['Order Number', 'Type','Name','Plan B','Price','Paid via','Paid','Your Balance','change'],
       orders: [
         {
          orderNumber: '1',
@@ -112,6 +102,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 h1, h2 {
   font-weight: normal;
